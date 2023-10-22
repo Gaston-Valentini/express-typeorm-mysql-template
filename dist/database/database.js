@@ -7,6 +7,7 @@ exports.database = void 0;
 require("reflect-metadata");
 const typeorm_1 = require("typeorm");
 const app_1 = __importDefault(require("../app/app"));
+const Example_1 = require("../entities/Example");
 exports.database = new typeorm_1.DataSource({
     type: "mysql",
     host: app_1.default.get("HOST"),
@@ -14,7 +15,7 @@ exports.database = new typeorm_1.DataSource({
     username: "root",
     password: app_1.default.get("DATABASE_PASSWORD"),
     database: "test",
-    entities: [],
+    entities: [Example_1.Example],
     migrations: [],
     logging: false,
     synchronize: true

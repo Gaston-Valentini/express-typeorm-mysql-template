@@ -7,6 +7,9 @@ dotenv.config()
 import routerRouteOne from "../router/routerRouteOne"
 import routerRouteTwo from "../router/routerRouteTwo"
 
+// Middlewares
+app.use(express.json())
+
 // Settings
 app.set("PORT", process.env.PORT || 4000)
 app.set("HOST", process.env.HOST)

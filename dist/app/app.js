@@ -10,6 +10,8 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const routerRouteOne_1 = __importDefault(require("../router/routerRouteOne"));
 const routerRouteTwo_1 = __importDefault(require("../router/routerRouteTwo"));
+// Middlewares
+app.use(express_1.default.json());
 // Settings
 app.set("PORT", process.env.PORT || 4000);
 app.set("HOST", process.env.HOST);

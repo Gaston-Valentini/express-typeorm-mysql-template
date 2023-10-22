@@ -1,9 +1,13 @@
 import { Request, Response } from "express"
 
-const routeOne = (req:Request, res:Response) => {
+import { Example } from "../entities/Example"
+
+const routeOne = async (req:Request, res:Response) => {
     try {
+        const data = await Example.find()
         return res.status(200).json({
-            message: "routeOne"
+            message: "routeOne",
+            data
         })
     } catch (error) {
         return res.status(400).json({
